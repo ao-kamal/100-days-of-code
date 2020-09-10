@@ -9,5 +9,3 @@ def histogram(s):
 
 
 histogram('brontosaurus')
-
-# TODO: ask on twitter "How would you rewrite this program more concisely using the 'get' method?"
