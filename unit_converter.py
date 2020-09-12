@@ -13,24 +13,58 @@ def time_from():
     prompt = input(
         'Converting from?: (Milliseconds, Seconds, Minutes, Hours, Days, Weeks)\n')
     if prompt == 'Milliseconds':
-        pass
+        print('Converting from Milliseconds...\n')
+        return 0
     elif prompt == 'Seconds':
-        pass
+        print('Converting from Seconds...\n')
+        return 1
     elif prompt == 'Minutes':
-        pass
+        print('Converting from Minutes...\n')
+        return 2
     elif prompt == 'Hours':
-        pass
+        print('Converting from Hours...\n')
+        return 3
     elif prompt == 'Days':
-        pass
+        print('Converting from Days...\n')
+        return 4
     elif prompt == 'Weeks':
-        pass
+        print('Converting from Weeks...\n')
+        return 5
     else:
         print('You typed {0}'.format(prompt))
         time_from()
 
 
+def time_to():
+    prompt = input(
+        'Converting to?: (Milliseconds, Seconds, Minutes, Hours, Days, Weeks)\n')
+    if prompt == 'Milliseconds':
+        print('Converting to Milliseconds...\n')
+        return 0
+    elif prompt == 'Seconds':
+        print('Converting to Seconds...\n')
+        return 1
+    elif prompt == 'Minutes':
+        print('Converting to Minutes...\n')
+        return 2
+    elif prompt == 'Hours':
+        print('Converting to Hours...\n')
+        return 3
+    elif prompt == 'Days':
+        print('Converting to Days...\n')
+        return 4
+    elif prompt == 'Weeks':
+        print('Converting to Weeks...\n')
+        return 5
+    else:
+        print('You typed {0}'.format(prompt))
+        time_to()
+
+
 def call_time():
-    time_from()
+    conv = [1, 10, 60, 60, 24, 7]
+    i = time_from()
+    j = time_to()
 
 
 def convert_again():
@@ -53,6 +87,8 @@ def unit_type():
         print('You typed {0}'.format(prompt))
         unit_type()
 
+
+unit_type()
 
 # 5 units:
 # - Length(Inches, Feet, Millimetres, Centimetres, Metres, Kilometers)
