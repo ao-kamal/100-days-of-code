@@ -8,10 +8,17 @@ import time
 print('Unit Converter')
 print('---------------------------')
 
+t_from = ''
+# Will be used to store the name of the unit we are converting from.
+t_to = ''
+# Will be used to store the name of the unit we are converting to.
+
 
 def time_from():
+    global t_from
     prompt = input(
         'Converting from?: (Milliseconds, Seconds, Minutes, Hours, Days, Weeks)\n')
+    t_from = prompt
     if prompt == 'Milliseconds':
         print('Converting from Milliseconds...\n')
         return 0
@@ -36,8 +43,10 @@ def time_from():
 
 
 def time_to():
+    global t_to
     prompt = input(
         'Converting to?: (Milliseconds, Seconds, Minutes, Hours, Days, Weeks)\n')
+    t_to = prompt
     if prompt == 'Milliseconds':
         print('Converting to Milliseconds...\n')
         return 0
@@ -65,6 +74,26 @@ def call_time():
     conv = [1, 10, 60, 60, 24, 7]
     i = time_from()
     j = time_to()
+
+    def to_be_converted():
+        prompt = input('Enter value to be converted:\n')
+        if prompt.isdigit() == True:
+            return int(prompt)
+        else:
+            print('You typed {0}'.format(prompt))
+            to_be_converted()
+
+    def time_divisor(i, j):
+        d = 1
+        for v in conv[i + 1:j + 1]:
+            d *= v
+        return d
+
+    value = to_be_converted()
+    divisor = time_divisor(i, j)
+    result = value / divisor
+    print('{0} {1} equals {2} {3}.'.format(value, t_from, result, t_to))
+    convert_again()
 
 
 def convert_again():
